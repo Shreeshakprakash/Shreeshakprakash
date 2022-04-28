@@ -8,7 +8,7 @@ I've been learning coding for past 3 years and have done a good progress in webs
 
 *   🌍  I'm based in India
 *   🖥️  See my portfolio at [My Mini Portfolio](http://shreeshakprakash.github.io/Website/)
-*   ✉️  You can contact me at [Gmail](mailto:shreesha165@gmail.com)
+*   ✉️  You can contact me at [shreesha165@gmail.com](mailto:shreesha165@gmail.com)
 *   🧠  I'm learning Graphics design /VFX
 *   🤝  I'm open to collaborating on Websites or any app.### Skills<p align="left">
                                 <a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a>
@@ -20,3 +20,4 @@ I've been learning coding for past 3 years and have done a good progress in webs
                                 <a href="https://flutter.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/flutter-colored.svg" width="36" height="36" alt="Flutter" /></a>
                                 <a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/photoshop-colored-dark.svg" width="36" height="36" alt="Photoshop" /></a>
                     </p>
+You can help me [Buy me a coffee ☕](https://www.buymeacoffee.com/shreesha16Q)
