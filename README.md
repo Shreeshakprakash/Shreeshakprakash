@@ -1,3 +1,4 @@
+![image alt](https://github.com/Shreeshakprakash/Shreeshakprakash/blob/b4ec6bbe46269a8074ed43425629a478453a6f6c/github%20image.svg)
 # 💫 About Me:
 i'm currently working on a e-commerce site which is a fullstack project <br>i'm currently studying engineering on computer science<br>i'm also a 3d artist
 
