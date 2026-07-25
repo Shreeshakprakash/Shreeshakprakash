@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="100%" height="100%">
+    <defs>
+        <!-- Fonts & Core Styles -->
+        <style>
+            .text-primary { fill: #F8FAFC; font-family: system-ui, -apple-system, sans-serif; font-weight: 700; }
+            .text-secondary { fill: #94A3B8; font-family: system-ui, -apple-system, sans-serif; font-weight: 500; }
+            .text-mono { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+            .pill { transition: all 0.3s ease; cursor: pointer; }
+            .pill:hover rect { stroke: #22D3EE; filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.4)); }
+            .pill:hover text { fill: #22D3EE; }
+            
+            /* CSS for icons reduced to positioning only */
+            .icon-group { cursor: pointer; }
+        </style>
+
+        <!-- Noise Texture -->
+        <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.1 0" />
+        </filter>
+
+        <!-- Ambient Glow Filter -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="80" result="blur" />
+        </filter>
+
+        <!-- Gradients -->
+        <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7C3AED" />
+            <stop offset="50%" stop-color="#22D3EE" />
+            <stop offset="100%" stop-color="#10B981" />
+        </linearGradient>
+
+        <linearGradient id="border-shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.03)" />
+            <stop offset="50%" stop-color="rgba(255,255,255,0.2)">
+                <animate attributeName="offset" values="-1; 2" dur="4s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stop-color="rgba(255,255,255,0.03)" />
+        </linearGradient>
+
+        <!-- Icon Glow Filter for Hover -->
+        <filter id="icon-hover-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+        </filter>
+    </defs>
+
+    <!-- Global Background -->
+    <rect width="1180" height="610" fill="#030712" rx="30" />
+
+    <!-- Noise Overlay -->
+    <rect width="1180" height="610" fill="url(#noise)" opacity="0.4" style="pointer-events: none;" rx="30" />
+
+    <!-- Ambient Particles (Glow) -->
+    <circle cx="300" cy="200" r="180" fill="#7C3AED" opacity="0.15" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 30,-30; 0,0" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="880" cy="410" r="200" fill="#10B981" opacity="0.12" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -40,30; 0,0" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="590" cy="150" r="150" fill="#22D3EE" opacity="0.12" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,40; 0,0" dur="9s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- ======================== TERMINAL WINDOW ======================== -->
+    <g>
+        <!-- Panel Base -->
+        <rect x="90" y="40" width="1000" height="530" rx="24" fill="#0F172A" fill-opacity="0.6" stroke="url(#border-shimmer)" stroke-width="1.5" />
+        
+        <!-- Window Controls -->
+        <circle cx="125" cy="70" r="6" fill="#FF5F56" />
+        <circle cx="145" cy="70" r="6" fill="#FFBD2E" />
+        <circle cx="165" cy="70" r="6" fill="#27C93F" />
+
+        <!-- Greeting -->
+        <text x="130" y="140" class="text-primary" font-size="28">Hi 👋</text>
+        <text x="130" y="195" class="text-primary" font-size="52">I'm <tspan fill="url(#accent-grad)">Shreesha</tspan></text>
+
+        <!-- TYPING CAROUSEL -->
+        <g class="text-mono" font-size="22" font-weight="500" fill="url(#accent-grad)">
+            <!-- Role 1 -->
+            <g opacity="0">
+                <animate attributeName="opacity" values="1;1;0;0" keyTimes="0; 0.33; 0.34; 1" dur="12s" repeatCount="indefinite" />
+                <clipPath id="clip-role-1-dark">
+                    <rect x="130" y="215" width="0" height="30">
+                        <animate attributeName="width" values="0; 280; 280; 0; 0" keyTimes="0; 0.15; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+                    </rect>
+                </clipPath>
+                <text x="130" y="240" clip-path="url(#clip-role-1-dark)">Full Stack Developer</text>
+                <!-- Cursor -->
+                <rect y="219" width="3" height="26" fill="#22D3EE">
+                    <animate attributeName="x" values="130; 400; 400; 130; 130" keyTimes="0; 0.15; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite" />
+                </rect>
+            </g>
+            
+            <!-- Role 2 -->
+            <g opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0; 0.33; 0.34; 0.66; 0.67; 1" dur="12s" repeatCount="indefinite" />
+                <clipPath id="clip-role-2-dark">
+                    <rect x="130" y="215" width="0" height="30">
+                        <animate attributeName="width" values="0; 130; 130; 0; 0" keyTimes="0; 0.15; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+                    </rect>
+                </clipPath>
+                <text x="130" y="240" clip-path="url(#clip-role-2-dark)">3D Artist</text>
+                <!-- Cursor -->
+                <rect y="219" width="3" height="26" fill="#22D3EE">
+                    <animate attributeName="x" values="130; 250; 250; 130; 130" keyTimes="0; 0.15; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite" />
+                </rect>
+            </g>
+            
+            <!-- Role 3 -->
+            <g opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1" keyTimes="0; 0.66; 0.67; 1" dur="12s" repeatCount="indefinite" />
+                <clipPath id="clip-role-3-dark">
+                    <rect x="130" y="215" width="0" height="30">
+                        <animate attributeName="width" values="0; 220; 220; 0; 0" keyTimes="0; 0.15; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+                    </rect>
+                </clipPath>
+                <text x="130" y="240" clip-path="url(#clip-role-3-dark)">Devops Learning</text>
+                <!-- Cursor -->
+                <rect y="219" width="3" height="26" fill="#22D3EE">
+                    <animate attributeName="x" values="130; 335; 335; 130; 130" keyTimes="0; 0.15; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite" />
+                </rect>
+            </g>
+        </g>
+
+        <rect x="130" y="270" width="920" height="1" fill="rgba(255,255,255,0.06)" />
+
+        <!-- SEQUENTIAL INFO REVEAL -->
+        <!-- Location -->
+        <g opacity="0">
+            <animate attributeName="opacity" to="1" begin="0.4s" dur="0.6s" fill="freeze" />
+            <text x="130" y="315" font-size="15" fill="#22D3EE" class="text-mono">></text>
+            <text x="155" y="315" font-size="15" class="text-secondary text-mono">Location:</text>
+            <text x="300" y="315" font-size="15" class="text-primary">Mangaluru, India</text>
+        </g>
+        <!-- Education -->
+        <g opacity="0">
+            <animate attributeName="opacity" to="1" begin="0.6s" dur="0.6s" fill="freeze" />
+            <text x="130" y="350" font-size="15" fill="#22D3EE" class="text-mono">></text>
+            <text x="155" y="350" font-size="15" class="text-secondary text-mono">Education:</text>
+            <text x="300" y="350" font-size="15" class="text-primary">Computer Science &amp; Engineering</text>
+        </g>
+        <!-- Current Focus -->
+        <g opacity="0">
+            <animate attributeName="opacity" to="1" begin="0.8s" dur="0.6s" fill="freeze" />
+            <text x="130" y="385" font-size="15" fill="#22D3EE" class="text-mono">></text>
+            <text x="155" y="385" font-size="15" class="text-secondary text-mono">Current Focus:</text>
+            <text x="300" y="385" font-size="15" class="text-primary">Cloud Architecture, 3D Rendering</text>
+        </g>
+        <!-- Portfolio -->
+        <g opacity="0">
+            <animate attributeName="opacity" to="1" begin="1.0s" dur="0.6s" fill="freeze" />
+            <text x="130" y="420" font-size="15" fill="#22D3EE" class="text-mono">></text>
+            <text x="155" y="420" font-size="15" class="text-secondary text-mono">Portfolio:</text>
+            <text x="300" y="420" font-size="15" class="text-primary">shreesha.dev</text>
+        </g>
+
+        <!-- SKILLS PILLS -->
+        <g opacity="0">
+            <animate attributeName="opacity" to="1" begin="1.2s" dur="0.8s" fill="freeze" />
+            <g class="pill" transform="translate(130, 465)">
+                <rect width="80" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <text x="40" y="22" class="text-primary" font-size="13" font-weight="500" text-anchor="middle">React</text>
+            </g>
+            <g class="pill" transform="translate(225, 465)">
+                <rect width="96" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <text x="48" y="22" class="text-primary" font-size="13" font-weight="500" text-anchor="middle">Tailwind</text>
+            </g>
+            <g class="pill" transform="translate(336, 465)">
+                <rect width="84" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <text x="42" y="22" class="text-primary" font-size="13" font-weight="500" text-anchor="middle">Python</text>
+            </g>
+            <g class="pill" transform="translate(435, 465)">
+                <rect width="64" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <text x="32" y="22" class="text-primary" font-size="13" font-weight="500" text-anchor="middle">Git</text>
+            </g>
+            <g class="pill" transform="translate(514, 465)">
+                <rect width="90" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <text x="45" y="22" class="text-primary" font-size="13" font-weight="500" text-anchor="middle">Blender</text>
+            </g>
+        </g>
+
+        <!-- SOCIAL ICONS (SMIL HOVER FIXED) -->
+        <g opacity="0" transform="translate(930, 505)">
+            <animate attributeName="opacity" to="1" begin="1.4s" dur="0.8s" fill="freeze" />
+            
+            <!-- GitHub -->
+            <a href="#" target="_blank">
+                <g transform="translate(0,0)" class="icon-group">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="#94A3B8">
+                        <!-- Color animate on path -->
+                        <animate attributeName="fill" from="#94A3B8" to="#22D3EE" begin="mouseover" dur="0.3s" fill="freeze" />
+                        <animate attributeName="fill" from="#22D3EE" to="#94A3B8" begin="mouseout" dur="0.3s" fill="freeze" />
+                        
+                        <!-- Glow animate (added as a filter reference animate) -->
+                        <animate attributeName="filter" from="none" to="url(#icon-hover-glow)" begin="mouseover" dur="0.3s" fill="freeze" />
+                        <animate attributeName="filter" from="url(#icon-hover-glow)" to="none" begin="mouseout" dur="0.3s" fill="freeze" />
+                    </path>
+                    <!-- Y-Translate animate on group -->
+                    <animateTransform attributeName="transform" type="translate" from="0 0" to="0 -2" begin="mouseover" dur="0.3s" fill="freeze" />
+                    <animateTransform attributeName="transform" type="translate" from="0 -2" to="0 0" begin="mouseout" dur="0.3s" fill="freeze" />
+                </g>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="#" target="_blank">
+                <g transform="translate(45,0)" class="icon-group">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#94A3B8">
+                        <animate attributeName="fill" from="#94A3B8" to="#22D3EE" begin="mouseover" dur="0.3s" fill="freeze" />
+                        <animate attributeName="fill" from="#22D3EE" to="#94A3B8" begin="mouseout" dur="0.3s" fill="freeze" />
+                        <animate attributeName="filter" from="none" to="url(#icon-hover-glow)" begin="mouseover" dur="0.3s" fill="freeze" />
+                        <animate attributeName="filter" from="url(#icon-hover-glow)" to="none" begin="mouseout" dur="0.3s" fill="freeze" />
+                    </path>
+                    <animateTransform attributeName="transform" type="translate" from="45 0" to="45 -2" begin="mouseover" dur="0.3s" fill="freeze" />
+                    <animateTransform attributeName="transform" type="translate" from="45 -2" to="45 0" begin="mouseout" dur="0.3s" fill="freeze" />
+                </g>
+            </a>
+            
+            <!-- Other Icon -->
+            <a href="#" target="_blank">
+                <g transform="translate(90,0)" class="icon-group">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.905 8.163h-3.55c-.247-1.83-1.026-3.51-2.197-4.887 2.455.772 4.417 2.502 5.747 4.887zM12 2.046c1.173 1.488 1.957 3.328 2.227 5.305H9.773C10.043 5.374 10.827 3.534 12 2.046zM2.87 14.163c-.126-.7-.197-1.42-.197-2.163s.07-1.463.197-2.163h4.414c-.067.712-.103 1.432-.103 2.163s.036 1.451.103 2.163H2.87zm2.225 5.561c-1.33-2.385-3.292-4.115-5.747-4.887h3.55c.247 1.83 1.026 3.51 2.197 4.887zm6.905 2.23c-1.173-1.488-1.957-3.328-2.227-5.305h4.454c-.27 1.977-1.054 3.817-2.227 5.305zm3.11-6.117H8.89c-.074-.707-.112-1.427-.112-2.163s.038-1.456.112-2.163h6.22c.074.707.112 1.427.112 2.163s-.038 1.456-.112 2.163zm1.155 4.444c1.171-1.377 1.95-3.057 2.197-4.887h3.55c-1.33 2.385-3.292 4.115-5.747 4.887zM21.13 14.163h-4.414c.067-.712.103-1.432.103-2.163s-.036-1.451-.103-2.163h4.414c.126.7.197 1.42.197 2.163s-.07 1.463-.197 2.163z" fill="#94A3B8">
+                        <animate attributeName="fill" from="#94A3B8" to="#22D3EE" begin="mouseover" dur="0.3s" fill="freeze" />
+                        <animate attributeName="fill" from="#22D3EE" to="#94A3B8" begin="mouseout" dur="0.3s" fill="freeze" />
+                        <animate attributeName="filter" from="none" to="url(#icon-hover-glow)" begin="mouseover" dur="0.3s" fill="freeze" />
+                        <animate attributeName="filter" from="url(#icon-hover-glow)" to="none" begin="mouseout" dur="0.3s" fill="freeze" />
+                    </path>
+                    <animateTransform attributeName="transform" type="translate" from="90 0" to="90 -2" begin="mouseover" dur="0.3s" fill="freeze" />
+                    <animateTransform attributeName="transform" type="translate" from="90 -2" to="90 0" begin="mouseout" dur="0.3s" fill="freeze" />
+                </g>
+            </a>
+        </g>
+    </g>
+</svg>
