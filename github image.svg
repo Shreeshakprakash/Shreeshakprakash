@@ -152,12 +152,12 @@
             <text x="300" y="385" font-size="15" class="text-primary">Cloud Architecture, 3D Rendering</text>
         </g>
         <!-- Portfolio -->
-        <g opacity="0">
+        <!--<g opacity="0">
             <animate attributeName="opacity" to="1" begin="1.0s" dur="0.6s" fill="freeze" />
             <text x="130" y="420" font-size="15" fill="#22D3EE" class="text-mono">></text>
             <text x="155" y="420" font-size="15" class="text-secondary text-mono">Portfolio:</text>
             <text x="300" y="420" font-size="15" class="text-primary">shreesha.dev</text>
-        </g>
+        </g> -->
 
         <!-- SKILLS PILLS -->
         <g opacity="0">
