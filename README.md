@@ -1,5 +1,5 @@
 ![image alt](https://github.com/Shreeshakprakash/Shreeshakprakash/blob/cf427881d0c2ec1f40752ccd05b265a492565cbf/github%20image.svg)
-#🌠 About Me:
+# 💫 About Me:
 Curently studying fullstack development also exploring devops. <br>Currently studying engineering on computer science.<br>I'm also a 3d artist
 
 
