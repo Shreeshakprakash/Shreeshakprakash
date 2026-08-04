@@ -1,6 +1,5 @@
 ![image alt](https://github.com/Shreeshakprakash/Shreeshakprakash/blob/cf427881d0c2ec1f40752ccd05b265a492565cbf/github%20image.svg)
-# <img width="160" height="160" alt="image" src="https://github.com/user-attachments/assets/203f6669-8ffe-4e2d-b915-bb1cedf0c914" />
- About Me:
+#🌠 About Me:
 Curently studying fullstack development also exploring devops. <br>Currently studying engineering on computer science.<br>I'm also a 3d artist
 
 
